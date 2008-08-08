@@ -127,7 +127,6 @@ To run the RSpec specs:
 	
 ## To Do
 
-* Add RSpec
 * Install the restful_authentication plugin
 * Install the "acts as state machine" plugin
 * Run the restful_authentication generator
@@ -142,6 +141,7 @@ To run the RSpec specs:
 * Add a License and README file
 * Created a .gitignore file
 * Checked the app into GitHub
+* Added RSpec (version 1.1.4)
 
 ## Documentation and Support
 
