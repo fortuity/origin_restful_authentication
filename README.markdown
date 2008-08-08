@@ -135,13 +135,14 @@ To run the RSpec specs:
 
 ## Done
 
-* Create an empty default Rails app
-* Add a License and README file
+* Created an empty default Rails app
+* Added a License and README file
 * Created a .gitignore file
 * Checked the app into GitHub
 * Added RSpec (version 1.1.4)
 * Installed the restful_authentication plugin (version of 08/07/08)
 * Installed the "acts as state machine" plugin (version 2.1)
+* Tagged step-1
 
 ## Documentation and Support
 
