@@ -3,6 +3,7 @@
 .DS_Store
 .project
 config/database.yml
+config/locomotive.yml
 config/initializers/site_keys.rb
 db/*.sqlite3*
 db/schema.rb
