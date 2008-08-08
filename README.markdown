@@ -127,7 +127,6 @@ To run the RSpec specs:
 	
 ## To Do
 
-* Run the restful_authentication generator
 * Add everything specified by "Restful Authentication With All the Bells and Whistles"
 * Add Google gmail support
 * Style with Blueprint CSS
@@ -143,6 +142,9 @@ To run the RSpec specs:
 * Installed the restful_authentication plugin (version of 08/07/08)
 * Installed the "acts as state machine" plugin (version 2.1)
 * Tagged step-1
+* Ran the restful_authentication generator ("./script/generate authenticated user sessions --stateful --rspec")
+* modified config/routes.rb and config/environment.rb as required
+* Tagged step-2
 
 ## Documentation and Support
 
