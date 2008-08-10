@@ -150,7 +150,7 @@ To run the RSpec examples:
 * Added recommended "Bells and Whistles" features 
 	* Created the model, controller, and views for resource "Roles"
 	* Created a join model "Permission"
-	* Created controllers for "Passwords" and "UserAccounts"
+	* Created controller for "Passwords"
 	* Created required migrations
 	* Modified models "Role", "Permission", and "User"
 	* Modified UserMailer and UserObserver
