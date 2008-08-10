@@ -129,7 +129,7 @@ To run the RSpec examples:
 	
 ## To Do
 
-* Modify model "User"?
+* Add RSpec examples and stories to cover "Bells and Whistles" features
 * Add a "change password" feature for a user
 * Style with Blueprint CSS
 * Change "login" to use email addresses instead
@@ -147,17 +147,19 @@ To run the RSpec examples:
 * Ran the restful_authentication generator ("./script/generate authenticated user sessions --stateful --rspec")
 * modified config/routes.rb and config/environment.rb as required
 * Tagged step-2
-* Created the model, controller, and views for resource "Roles"
-* Created a join model "Permission"
-* Created controllers for "Passwords" and "UserAccounts"
-* Created required migrations
-* Modified models "Role", "Permission", and "User"
-* Modified UserMailer and UserObserver
-* Added Google gmail support with lib/smtp_tls.rb
-* Modified config/initializers/mail.rb
-* Modified lib/authenticated_system.rb
-* Modified controllers
-* Added views
+* Added recommended "Bells and Whistles" features 
+	* Created the model, controller, and views for resource "Roles"
+	* Created a join model "Permission"
+	* Created controllers for "Passwords" and "UserAccounts"
+	* Created required migrations
+	* Modified models "Role", "Permission", and "User"
+	* Modified UserMailer and UserObserver
+	* Added Google gmail support with lib/smtp_ tls.rb
+	* Modified config/initializers/mail.rb
+	* Modified lib/authenticated_ system.rb
+	* Modified controllers
+	* Added views
+* Tagged step-3
 
 ## Documentation and Support
 
