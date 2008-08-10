@@ -117,18 +117,20 @@ You must prepare the test database before running RSpec:
 	
 which takes a schema dump from the development database and uses it to create a test database. (If you're modifying the app, you'll need to do that after every migration.)
 
+Before running RSpec stories or examples, you should change email addresses throughout the RSpec code (or else you may get "mail undelivered" bounce messages). Search and replace for "example.com."
+
 To see the RSpec stories:
 
 	$ ruby stories/all.rb
-	
-To run the RSpec specs:
+
+To run the RSpec examples:
 
 	$ rake spec
 	
 ## To Do
 
-* Add everything specified by "Restful Authentication With All the Bells and Whistles"
-* Add Google gmail support
+* Modify model "User"?
+* Add a "change password" feature for a user
 * Style with Blueprint CSS
 * Change "login" to use email addresses instead
 
@@ -145,6 +147,17 @@ To run the RSpec specs:
 * Ran the restful_authentication generator ("./script/generate authenticated user sessions --stateful --rspec")
 * modified config/routes.rb and config/environment.rb as required
 * Tagged step-2
+* Created the model, controller, and views for resource "Roles"
+* Created a join model "Permission"
+* Created controllers for "Passwords" and "UserAccounts"
+* Created required migrations
+* Modified models "Role", "Permission", and "User"
+* Modified UserMailer and UserObserver
+* Added Google gmail support with lib/smtp_tls.rb
+* Modified config/initializers/mail.rb
+* Modified lib/authenticated_system.rb
+* Modified controllers
+* Added views
 
 ## Documentation and Support
 

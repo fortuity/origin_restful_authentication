@@ -1,0 +1,11 @@
+<% form_tag password_path, :method => :put do %>
+<%= hidden_field_tag :id, params[:id] %>
+Password:<br />
+<%= password_field_tag :password %><br />
+Confirm Password:<br />
+<%= password_field_tag :password_confirmation %><br />
+<%= submit_tag "Reset Your Password" %>
+<% end %>
+<script type='text/javascript'>
+document.getElementById('password').focus()
+</script>

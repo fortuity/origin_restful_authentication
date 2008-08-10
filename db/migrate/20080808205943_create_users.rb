@@ -13,7 +13,10 @@ class CreateUsers < ActiveRecord::Migration
       t.column :activation_code,           :string, :limit => 40
       t.column :activated_at,              :datetime
       t.column :state,                     :string, :null => :no, :default => 'passive'
+      t.column :password_reset_code, :string, :limit => 40
       t.column :deleted_at,                :datetime
+      t.integer :updated_by
+      t.timestamps
     end
     add_index :users, :login, :unique => true
   end

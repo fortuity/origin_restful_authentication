@@ -2,8 +2,14 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  
   helper :all # include all helpers, all the time
 
+  include AuthenticatedSystem
+  
+  # don't show passwords in logs
+  filter_parameter_logging 'password'
+  
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => '78c0ab0fdb009a67d6b0ca5add7739cc'

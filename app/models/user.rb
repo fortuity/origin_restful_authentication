@@ -38,6 +38,27 @@ class User < ActiveRecord::Base
     u && u.authenticated?(password) ? u : nil
   end
 
+  def forgot_password
+    @forgotten_password = true
+    self.make_password_reset_code
+  end
+
+  def reset_password
+    # First update the password_reset_code before setting the
+    # reset_password flag to avoid duplicate email notifications.
+    update_attribute(:password_reset_code, nil)
+    @reset_password = true
+  end  
+
+  # used in user_observer
+  def recently_forgot_password?
+    @forgotten_password
+  end
+
+  def recently_reset_password?
+    @reset_password
+  end
+  
   protected
     
     def make_activation_code

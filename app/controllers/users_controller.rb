@@ -1,11 +1,22 @@
 class UsersController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
+  layout 'application'
   
+  before_filter :not_logged_in_required, :only => [:new, :create] 
+  before_filter :find_user_or_current_user, :only => [:show, :edit, :update]
+  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
   # Protect these actions behind an admin login
   # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
-  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
+  before_filter :check_administrator_role, :only => [:index,
+                                      :suspend, :unsuspend, :destroy, :purge]
   
+  # only an administrator should see all the users
+  def index
+    @users = User.find(:all)
+  end
+  
+  # users can view their own profile, administrators can view any
+  def show
+  end
 
   # render new.rhtml
   def new
@@ -26,6 +37,20 @@ class UsersController < ApplicationController
     end
   end
 
+  # users can edit their own profile, administrators can edit any
+  def edit
+  end
+
+  # users can update their own profile, administrators can update any
+  def update
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "User updated"
+      redirect_to user_path(@user)
+    else
+      render :action => 'edit'
+    end
+  end
+  
   def activate
     logout_keeping_session!
     user = User.find_by_activation_code(params[:activation_code]) unless params[:activation_code].blank?
@@ -43,32 +68,41 @@ class UsersController < ApplicationController
     end
   end
 
+  # only for an administrator (disable a user)
   def suspend
     @user.suspend! 
     redirect_to users_path
   end
 
+  # only for an administrator (enable a user)
   def unsuspend
     @user.unsuspend! 
     redirect_to users_path
   end
 
+  # only for an administrator (same as purge, removes a user completely)
   def destroy
     @user.delete!
     redirect_to users_path
   end
 
+  # only for an administrator (same as destroy, removes a user completely)
   def purge
     @user.destroy
     redirect_to users_path
   end
   
-  # There's no page here to update or destroy a user.  If you add those, be
-  # smart -- make sure you check that the visitor is authorized to do so, that they
-  # supply their old password along with a new one to update it, etc.
-
 protected
+
   def find_user
     @user = User.find(params[:id])
+  end
+  
+  def find_user_or_current_user
+    if current_user.has_role?('administrator')
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
   end
 end

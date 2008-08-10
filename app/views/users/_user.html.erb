@@ -1,0 +1,15 @@
+<tr class="<%= cycle('odd', 'even') %>">
+<td><%=h user.login %></td>
+<td><%=h user.email %></td>
+<td><%= user.state %>
+<% unless user == current_user %>
+[<% if user.enabled %>
+<%= link_to('disable', suspend_user_path(user.id), :method => :put) %>
+<% else %>
+<%= link_to('enable', unsuspend_user_path(user.id), :method => :put) %>
+<% end %>]
+<% end %>
+</td>
+<td>[ <%= link_to 'edit roles', user_roles_path(user) %> ]</td>
+<td>[ <%= link_to 'edit profile', edit_user_path(user) %> ]</td>
+</tr>
