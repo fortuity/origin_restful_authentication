@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :email,    :case_sensitive => false
   validates_format_of       :email,    :with => RE_EMAIL_OK, :message => MSG_EMAIL_BAD
 
-  
+  has_many :permissions
+  has_many :roles, :through => :permissions
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
@@ -57,6 +58,14 @@ class User < ActiveRecord::Base
 
   def recently_reset_password?
     @reset_password
+  end
+  
+  def self.find_for_forget(email)
+    find :first, :conditions => ['email = ? and activated_at IS NOT NULL', email]
+  end
+
+  def has_role?(name)
+    self.roles.find_by_name(name) ? true : false
   end
   
   protected

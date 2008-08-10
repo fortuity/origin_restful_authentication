@@ -26,6 +26,10 @@
     <li><%= link_to 'Forgot Password?', forgot_password_path %></li>
     <% end %>
     </ul>
+	  <div id="flashes">
+	    <div id="errors" class="error" style="display:none"><%= flash[:error] %></div>
+	    <div id="notice" class="notice" style="display:none"><%= flash[:notice] %></div>
+	  </div>
     <%= yield %>
 </body>
 </html>
