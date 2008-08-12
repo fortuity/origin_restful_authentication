@@ -160,7 +160,8 @@ To run the RSpec examples:
 * Tagged step-3
 * Added Eugene Bolshakov's AppConfig plugin
 * Added Blueprint CSS framework
-* Modified views and CSS to apply design elements
+* Modified views and added CSS to apply design elements
+* Tagged step-4
 
 ## Documentation and Support
 
