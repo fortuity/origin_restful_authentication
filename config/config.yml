@@ -1,0 +1,19 @@
+# Values set in this file are called in the application like this: Conf.site_url.
+# Values set in the "common" section are shared among development, test, and production
+# environments unless overridden in development, test, or production sections.
+# Values set in a file "config/config.local.yml" override any values set here.
+# See vendor/plugins/app_config/README for more information.
+
+common:
+  site_url: http://mydomain.com/
+  site_email_address: admin@mydomain.com
+  site_name: Origin RESTful Authentication
+  admin_login: admin
+  admin_email_address: admin@mydomain.com
+  admin_password: admin
+
+development:
+  site_url: http://localhost:3000/
+
+test:
+  site_url: http://localhost:3000/

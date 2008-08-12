@@ -98,7 +98,7 @@ module AuthenticatedSystem
       respond_to do |format|
         format.html do
           #Put your domain name here ex. http://www.example.com
-          domain_name = "http://localhost:3000"
+          domain_name = Conf.site_url
           http_referer = session[:refer_to]
           if http_referer.nil?
             store_referer
@@ -107,7 +107,7 @@ module AuthenticatedSystem
           flash[:error] = "You don't have permission to complete that action."
           #The [0..20] represents the 21 characters in http://localhost:3000
           #You have to set that to the number of characters in your domain name
-          if http_referer[0..20] != domain_name  
+          if http_referer[0..Conf.site_url.size] != domain_name  
             session[:refer_to] = nil
             redirect_to root_path
           else

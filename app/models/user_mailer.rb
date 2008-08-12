@@ -3,20 +3,20 @@ class UserMailer < ActionMailer::Base
     setup_email(user)
     @subject    += 'Please activate your new account'
   
-    @body[:url]  = "http://localhost:3000/activate/#{user.activation_code}"
+    @body[:url]  = "#{Conf.site_url}activate/#{user.activation_code}"
   
   end
   
   def activation(user)
     setup_email(user)
     @subject    += 'Your account has been activated!'
-    @body[:url]  = "http://localhost:3000/"
+    @body[:url]  = "#{Conf.site_url}"
   end
 
   def forgot_password(user)
     setup_email(user)
     @subject    += 'You have requested to change your password'
-    @body[:url]  = "http://localhost:3000/reset_password/#{user.password_reset_code}"
+    @body[:url]  = "#{Conf.site_url}reset_password/#{user.password_reset_code}"
   end
 
   def reset_password(user)
@@ -25,10 +25,10 @@ class UserMailer < ActionMailer::Base
   end
 
   def message_to_admin(subject,body)
-    @admin = User.find_by_login('admin')
+    @admin = User.find_by_login(Conf.admin_login)
     @recipients  = @admin.email
     @from        = @admin.email
-    @subject     = "YourApplication - "
+    @subject     = "#{Conf.site_name}"
     @sent_on     = Time.now
     @subject    += subject
     @body[:body]  = body
@@ -37,8 +37,8 @@ class UserMailer < ActionMailer::Base
   protected
     def setup_email(user)
       @recipients  = "#{user.email}"
-      @from        = "ADMINEMAIL"
-      @subject     = "[YOURSITE] "
+      @from        = "#{Conf.site_email_address}"
+      @subject     = "#{Conf.site_name}"
       @sent_on     = Time.now
       @body[:user] = user
     end

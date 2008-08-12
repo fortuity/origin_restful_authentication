@@ -20,6 +20,7 @@ The application provides _authentication_ (the user must enter a name and passwo
 
 * user status managed with the "acts as state machine" (AASM) plugin
 * Email messages can be sent using a Google gmail account
+* Application global configuration file
 
 The application does not provide support for the OpenID protocol. The forum discussion [Restful Authentication With All the Bells and Whistles](http://www.railsforum.com/viewtopic.php?id=14216) provides instructions for adding OpenID support if you require it.
 
@@ -33,6 +34,7 @@ The application does not provide support for the OpenID protocol. The forum disc
 * acts as state machine
 * rspec
 * rspec-rails
+* app_config
 
 ## Get It
 
@@ -49,8 +51,7 @@ The application has been configured to use a Google gmail account to send confir
 Configure email by modifying
 
 	config/initializers/mail.rb
-	app/models/user_mailer.rb
-	db/migrate/004_create_roles_users.rb
+	config/config.yml (_or create_ "config/config.local.yml")
 		
 ## Set Up the Database
 
@@ -79,9 +80,9 @@ it means you didn't run the database migration.
 
 Running the database migrations sets up a user named "admin" with a password "admin" and a role of "administrator". You can modify the file
 
-	db/migrate/004_create_roles_users.rb
+	config/config.yml
 
-if you wish to change the administrator name and password (or you can reset it later).
+if you wish to change the administrator name and password before you run the migration.
 	
 ## Getting Started
 
@@ -91,7 +92,7 @@ Start the server
 
 and go to http://localhost:3000/. 
 
-To sign in as the pre-configured admin user, use
+To sign in as the pre-configured admin user, (unless you've changed it) use
 
 		name: admin
 		password: admin
@@ -100,10 +101,9 @@ You should change the admin user name and password after you log in.
 
 ## Deploy
 
-Before you deploy to production, be sure to replace http://localhost:3000/ with your domain in the files:
+Before you deploy to production, be sure to replace http://localhost:3000/ with your site URL in the file:
 
-	app/models/user_mailer.rb
-	lib/authenticated_system.rb	
+	config/config.yml	
 
 ## Running RSpec
 
@@ -129,9 +129,9 @@ To run the RSpec examples:
 	
 ## To Do
 
+* Style with Blueprint CSS
 * Add RSpec examples and stories to cover "Bells and Whistles" features
 * Add a "change password" feature for a user
-* Style with Blueprint CSS
 * Change "login" to use email addresses instead
 
 ## Done
@@ -160,6 +160,7 @@ To run the RSpec examples:
 	* Modified controllers
 	* Added views
 * Tagged step-3
+* Added Eugene Bolshakov's AppConfig plugin
 
 ## Documentation and Support
 
