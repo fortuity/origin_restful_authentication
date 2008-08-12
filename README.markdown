@@ -51,7 +51,7 @@ The application has been configured to use a Google gmail account to send confir
 Configure email by modifying
 
 	config/initializers/mail.rb
-	config/config.yml (_or create_ "config/config.local.yml")
+	config/config.yml (or create "config/config.local.yml")
 		
 ## Set Up the Database
 
@@ -129,9 +129,7 @@ To run the RSpec examples:
 	
 ## To Do
 
-* Style with Blueprint CSS
 * Add RSpec examples and stories to cover "Bells and Whistles" features
-* Add a "change password" feature for a user
 * Change "login" to use email addresses instead
 
 ## Done
@@ -161,6 +159,8 @@ To run the RSpec examples:
 	* Added views
 * Tagged step-3
 * Added Eugene Bolshakov's AppConfig plugin
+* Added Blueprint CSS framework
+* Modified views and CSS to apply design elements
 
 ## Documentation and Support
 
@@ -169,7 +169,8 @@ The forum discussion [Restful Authentication With All the Bells and Whistles](ht
 Here are useful blog postings:
 
 * [How to Install RESTful Authentication on a Ruby on Rails 2.1 Application](http://crazyrails.com/how-to-install-restful-authentication/).
-* [How to Set Up Restful Authentication and acts_as_state_machine With Rails 2.1](http://fakingfantastic.com/2008/08/05/how-to-set-up-restful-authentication-and-acts_as_state_machine-with-rails-21/).
+* Frank Lakatos's [How to Set Up Restful Authentication and acts_as_state_machine With Rails 2.1](http://fakingfantastic.com/2008/08/05/how-to-set-up-restful-authentication-and-acts_as_state_machine-with-rails-21/).
+* Dan Engle's [My Take on Enhancing restful_authentication](http://morebs.com/2008/02/20/my-take-on-restful_authentication/).
 
 This application is provided without additional documentation or support.
 
@@ -178,6 +179,7 @@ This application is provided without additional documentation or support.
 * Rick Olson (and contributors) for the Restful Authentication Generator plugin
 * "activefx" for "Restful Authentication With All the Bells and Whistles"
 * Scott Barron for the "acts as state machine" plugin
+* Graphic design derived from [Bruno Bornsztein's CommunityEngine](http://www.missingmethod.com/)
 	
 ## License
 

@@ -1,0 +1,329 @@
+/*========================================================*/
+/* COLOR GUIDE                                            */
+/*========================================================*/
+/*
+dark grey #464337
+light grey #a2a19b
+
+blue link #06f
+
+h3 yellow border #ffd735
+
+alt blue light #e1ecff
+
+alt blue dark #94beff
+
+========================================================= */
+
+
+/*========================================================*/
+/*    Cascading Style Sheet for the Origin App            */
+/*========================================================*/
+
+/*========================================================*/
+/*                  Table of Contents                     */
+/*========================================================*/
+/*  1. COMMON
+/*  2. GRID
+/*  3. HEADER
+/*  4. FOOTER
+/*  5. MAIN
+/*  6. SIDEBAR
+/*  7. BOX and ALTBOX
+/*  8. FORMS
+/*  9. MESSAGES 
+/*========================================================*/
+
+/* =============================================== */
+/*  1. COMMON 
+/* =============================================== */
+
+h1, h2, h3, h4, h5, h6 {
+font-size:100%;
+font-weight:normal;
+}
+
+a {color: #06f;}
+
+a:hover {
+color: #06f;
+text-decoration: none;
+}
+
+p {margin: 0 0 1em 0;}
+
+fieldset {
+border:0 none;
+padding:0;
+}
+
+.clear {clear: both;}
+.right {float: right;}
+.left {float:left;}
+.centered {text-align:center; }
+
+/* =============================================== */
+/*  2. GRID 
+/* =============================================== */
+
+#container { 
+color: #464337;
+}
+
+#container_hd { 
+width: 950px;
+margin: 0 auto; 
+border-top:4px solid #464337;
+}
+
+#container_bd { 
+width: 950px; 
+margin: 0 auto;
+}
+
+#container_ft { 
+width: 950px; 
+margin: 0 auto;
+}
+
+/* =============================================== */
+/*  3. HEADER
+/* =============================================== */
+
+#hd { float: left; margin-right: 10px; margin-right: 0; width: 950px; margin: 0; }
+
+#hd h1 {
+float:left;
+}
+
+#hd h1 a {
+color:#464337;
+display:block;
+font-size:182%;
+font-weight:bold;
+margin:20px 0 10px;
+text-decoration:none;
+text-transform:uppercase;
+}
+
+#hd h2 {
+float:right;
+font-size:138.5%;
+margin-top:25px;
+}
+
+/* =============================================== */
+/*  4. FOOTER
+/* =============================================== */
+
+#ft { float: left; margin-right: 10px; margin-right: 0; width: 950px; margin: 0; 
+background:#F1F1F1 none repeat scroll 0 0;
+border-top:1px solid #CCCCCC;
+padding-bottom:1em;
+font-size:85%;
+margin:20px 0;
+display:block;
+}
+
+#ft ul, #ft ul li {
+float:left;
+}
+
+#ft li {
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+}
+
+#ft li:first-child a {
+border:medium none;
+padding-left:0;
+}
+
+#ft li a {
+border-left:1px solid #CCCCCC;
+display:block;
+padding:2px 10px;
+}
+
+/* =============================================== */
+/*  5. MAIN 
+/* =============================================== */
+
+#main { float: left; margin-right: 10px; width: 670px; }
+
+#main h3 {
+border-bottom:1px solid #FFD735;
+font-size:123.1%;
+font-weight:bold;
+margin:1.5em 0 1em;
+text-transform:uppercase;
+}
+
+/* =============================================== */
+/*  6. SIDEBAR 
+/* =============================================== */
+
+#sidebar { float: left; margin-right: 10px; margin-right: 0; width: 270px; }
+
+/* =============================================== */
+/* 7. BOX and ALTBOX
+/* =============================================== */
+
+.box{
+background: none;
+margin:0 0 1em;
+padding:0;
+}
+
+.box h2{
+margin-bottom: .5em;
+font-weight: bold;
+font-size: 153.9%;
+}
+
+.box h3{
+font-size: 123.1%;
+font-weight: bold;
+text-transform: uppercase;
+border-bottom: 1px solid #ffd735;
+margin:1.5em 0 1em 0;
+}
+
+.alt{
+border: 1px solid #94beff;
+background: #e1ecff;
+padding: 1em;
+}
+
+.alt h3{
+border: none;
+margin: 0 0 .5em 0;
+padding: .5em;
+background: #94beff;
+color: #38465b;
+}
+
+.first_alt {
+margin-top:3.25em;
+}
+	
+/* =============================================== */
+/*  8. FORMS 
+/* =============================================== */
+
+.MainForm{
+color: #464337;
+}
+
+.MainForm label{
+display: block;
+margin: 1em 0 2px 0;
+}
+
+.MainForm label em{
+font-style: italic;
+font-family: Georgia, Times, serif;
+color: #777;
+}
+
+.MainForm select{
+border:1px solid #ccc;
+}
+
+.MainForm input, .MainForm textarea{
+border: 1px solid #ccc;
+padding: 5px;
+font-size: 123.1%;
+font-weight: bold;
+color: #777;
+width: 250px;
+background: #f8f8f8;
+}
+
+.MainForm input:focus, .MainForm textarea:focus{
+color: #777;
+border-color: #777;
+background: #fff;
+}
+
+.MainForm input.wrong, .MainForm .fieldWithErrors input {
+border-color: #f00;
+color: #f00;
+background: #ffd5d5;
+}
+
+/* submit */
+.MainForm p input, .MainForm p button {
+padding-left: 1em;
+padding-right: 1em;
+background: #008000;
+border: 4px solid #004500;
+color: #fff;
+margin: 1em 0;
+width: auto;
+cursor: pointer;
+}
+
+.MainForm p input:hover{
+background:#004500;} 
+
+.MainForm strong{color: #f00;}
+
+.MainForm strong.ok{color: #008000;}
+
+.MainForm strong em{
+text-decoration: underline;
+font-weight: bold;}
+
+.MainForm textarea{
+width: 550px;
+color: #777;
+}
+
+/* checkboxes */
+
+.MainForm fieldset {margin: 1em 0 0 0;}
+
+.MainForm fieldset label{
+margin: 4px 0;
+color: #777;
+}
+
+.MainForm fieldset input{
+border: none;
+width: auto;
+vertical-align: bottom;
+}
+
+.MainForm fieldset.inline label{
+display: inline;
+margin-right: 1em;
+}
+
+/* =============================================== */
+/*  9. MESSAGES 
+/* =============================================== */
+
+.error, .notice, .warning, .message, .success {
+padding:.8em;
+margin-bottom:1em;
+border:2px solid #ddd;
+font-size:123.1%;
+}
+
+.error {background:#FBE3E4;color:#8a1f11;border-color:#FBC2C4;}
+.notice {background:#FFF6BF;color:#514721;border-color:#FFD324;}
+.message {background:#FFF6BF;color:#514721;border-color:#FFD324;}
+.success {background:#E6EFC2;color:#264409;border-color:#C6D880;}
+.error a {color:#8a1f11;}
+.notice a {color:#514721;}
+.success a {color:#264409;}
+
+.warning, #errorExplanation, .errorExplanation{
+padding: 1em 1em 1em 1em;
+margin: 1em 0;
+border: 1px solid #fc0;
+background: #fff3c5;
+color: #6b5e2b;
+}

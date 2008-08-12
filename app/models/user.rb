@@ -75,5 +75,8 @@ class User < ActiveRecord::Base
         self.activation_code = self.class.make_token
     end
 
+    def make_password_reset_code
+    self.password_reset_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
+    end
 
 end

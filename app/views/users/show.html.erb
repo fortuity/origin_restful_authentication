@@ -1,3 +1,16 @@
-<h2>User: <%=h @user.login %></h2>
-<p>email: <%=h @user.email %></p>
-<p>Joined on: <%= @user.created_at.to_s(:long) %></p>
+<% if @user == current_user %>
+	<h3>Your User Profile</h3>
+<% else %>
+	<h3>User's Profile</h3>
+<% end %>
+
+<p><strong>User:</strong> <%=h @user.login %></p>
+<p><strong>Email:</strong> <%=h @user.email %></p>
+<p><strong>Joined on:</strong> <%= @user.created_at.to_s(:long) %></p>
+
+<% content_for(:sidebar) do %>
+	<div class="box">
+		<h3>Help</h3>
+		<p> This is your user profile. </p>
+	</div>
+<% end -%>

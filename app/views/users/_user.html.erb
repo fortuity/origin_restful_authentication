@@ -3,11 +3,12 @@
 <td><%=h user.email %></td>
 <td><%= user.state %>
 <% unless user == current_user %>
-[<% if user.enabled %>
-<%= link_to('disable', suspend_user_path(user.id), :method => :put) %>
-<% else %>
-<%= link_to('enable', unsuspend_user_path(user.id), :method => :put) %>
-<% end %>]
+	<% if user.state == 'active' %>
+		<%= link_to('suspend', suspend_user_path(user.id), :method => :put) %>
+	<% end %>
+	<% if user.state == 'suspended' %>
+		<%= link_to('unsuspend', unsuspend_user_path(user.id), :method => :put) %>
+	<% end %>
 <% end %>
 </td>
 <td>[ <%= link_to 'edit roles', user_roles_path(user) %> ]</td>

@@ -1,22 +1,45 @@
-<h1>Sign up as a new user</h1>
+<h3>Sign up!</h3>
+
 <% @user.password = @user.password_confirmation = nil %>
-
 <%= error_messages_for :user %>
-<% form_for :user, :url => users_path do |f| -%>
-<p><%= label_tag 'login' %><br/>
-<%= f.text_field :login %></p>
 
-<p><%= label_tag 'email' %><br/>
-<%= f.text_field :email %></p>
+<% form_for :user, :url => users_path, :html => { :class => 'MainForm' } do |f| -%>
 
-<p><%= label_tag 'password' %><br/>
-<%= f.password_field :password %></p>
+	<%= label_tag 'login', 'Username' %>
+	<%= f.text_field :login %>
 
-<p><%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
-<%= f.password_field :password_confirmation %></p>
+	<%= label_tag 'email', "Email address" %>
+	<%= f.text_field :email %>
 
-<p><%= submit_tag 'Sign up' %></p>
+	<%= label_tag 'password', 'Type your password:'  %>
+	<%= f.password_field :password %>
+
+	<%= label_tag 'password_confirmation', 'Re-type your password to confirm:' %>
+	<%= f.password_field :password_confirmation %>
+
+	<p><%= submit_tag 'Sign up' %></p>
 <% end -%>
-<script type='text/javascript'>
-document.getElementById('user_login').focus()
-</script>
+
+
+<% content_for(:sidebar) do %>
+	<div class="box">
+		<h3> Why Sign up? </h3>
+		<ul class="list checks">
+		<li>You'll have access to all the features</li>
+		</ul>
+	</div>
+	<div class="box alt">
+		<h3>Tips</h3>
+		<p> After signing up, you'll receive an e-mail confirmation message. </p>
+		<p> Click the activation link in the e-mail to log in. </p>
+		<p>
+		<%= link_to 'Already have an account?', new_session_path %>
+		</p>
+	</div>
+<% end -%>
+
+<% content_for(:head) do %>
+	<script type='text/javascript'>
+	  document.getElementById('login').focus()
+	</script>
+<% end -%>

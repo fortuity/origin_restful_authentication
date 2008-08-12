@@ -1,11 +1,27 @@
-<% form_tag password_path, :method => :put do %>
-<%= hidden_field_tag :id, params[:id] %>
-Password:<br />
-<%= password_field_tag :password %><br />
-Confirm Password:<br />
-<%= password_field_tag :password_confirmation %><br />
-<%= submit_tag "Reset Your Password" %>
-<% end %>
-<script type='text/javascript'>
-document.getElementById('password').focus()
-</script>
+<h3>Create a New Password</h3>
+
+<% form_tag( password_path, {:method => :put, :class => 'MainForm'}) do -%>
+	<%= hidden_field_tag :id, params[:id] %>
+	
+	<%= label_tag 'password', 'Type a new password:'  %>
+	<%= password_field_tag :password %>
+
+	<%= label_tag 'password_confirmation', 'Re-type the new password to confirm:' %>
+	<%= password_field_tag :password_confirmation %>
+
+	<p><%= submit_tag 'Create my new password' %></p>
+<% end -%>
+
+
+<% content_for(:sidebar) do %>
+	<div class="box">
+		<h3>Help</h3>
+		<p> We've deleted your old password. Please create a new password. </p>
+	</div>
+<% end -%>
+
+<% content_for(:head) do %>
+	<script type='text/javascript'>
+	  document.getElementById('password').focus()
+	</script>
+<% end -%>

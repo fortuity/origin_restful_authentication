@@ -1,14 +1,29 @@
-<h2>Edit Your Account</h2>
-<p><%= link_to 'Show Profile', user_path(@user) %> | 
-<%= link_to 'Change Password', change_password_path %>
-</p>
+<% if @user == current_user %>
+	<h3>Edit Your Profile</h3>
+<% else %>
+	<h3>Edit User's Profile</h3>
+<% end %>
+
 <%= error_messages_for :user %>
 
-<% form_for :user, :url => user_url(@user), :html => { :method => :put } do |f| %>
-<p>Email:<br /><%= f.text_field :email, :size => 60 %></p>
+<% form_for :user, :url => user_url(@user), :html => { :method => :put, :class => 'MainForm' } do |f| %>
+	<%= hidden_field_tag :id, params[:id] %>
+	
+	<%= label_tag 'email', 'Email address:'  %>
+	<%= f.text_field :email, :size => 60 %>
 
-<%= submit_tag 'Save' %>
-<% end %>
-<script type='text/javascript'>
-document.getElementById('user_email').focus()
-</script>
+	<p><%= submit_tag 'Save' %></p>
+<% end -%>
+
+<% content_for(:sidebar) do %>
+	<div class="box">
+		<h3>Help</h3>
+		<p> You can change your email address here. </p>
+	</div>
+<% end -%>
+
+<% content_for(:head) do %>
+	<script type='text/javascript'>
+	  document.getElementById('user_email').focus()
+	</script>
+<% end -%>

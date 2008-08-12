@@ -1,17 +1,38 @@
-<h1>Log In</h1>
+<h3>Log in</h3>
 
-<% form_tag session_path do -%>
-<p><%= label_tag 'login' %><br />
-<%= text_field_tag 'login', @login %></p>
+<% form_tag(session_path, {:class => 'MainForm'}) do -%>
 
-<p><%= label_tag 'password' %><br/>
-<%= password_field_tag 'password', nil %></p>
+	<%= label_tag 'login' %>
+	<%= text_field_tag 'login', @login %>
 
-<p><%= label_tag 'remember_me', 'Remember me' %>
-<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+	<%= label_tag 'password' %>
+	<%= password_field_tag 'password', nil %>
 
-<p><%= submit_tag 'Log in' %></p>
+	<fieldset>
+	<%= check_box_tag 'remember_me', '1', @remember_me %> Remember me
+	</fieldset>
+
+	<p><%= submit_tag 'Log in' %></p>
 <% end -%>
-<script type='text/javascript'>
-  document.getElementById('login').focus()
-</script>
+
+<% content_for(:sidebar) do %>
+	<div class="box">
+		<h3>Help</h3>
+		<p>
+		Don't have an account?
+		<br/>
+		<%= link_to '» Click here to sign up', new_user_path %>
+		</p>
+		<p>
+		Forgot your password?
+		<br/>
+		<%= link_to '» Click here to retrieve it', forgot_password_path %>
+		</p>
+	</div>
+<% end -%>
+
+<% content_for(:head) do %>
+	<script type='text/javascript'>
+	  document.getElementById('login').focus()
+	</script>
+<% end -%>

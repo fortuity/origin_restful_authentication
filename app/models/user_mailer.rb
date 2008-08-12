@@ -1,7 +1,7 @@
 class UserMailer < ActionMailer::Base
   def signup_notification(user)
     setup_email(user)
-    @subject    += 'Please activate your new account'
+    @subject     = 'Please activate your new account'
   
     @body[:url]  = "#{Conf.site_url}activate/#{user.activation_code}"
   
@@ -9,19 +9,19 @@ class UserMailer < ActionMailer::Base
   
   def activation(user)
     setup_email(user)
-    @subject    += 'Your account has been activated!'
+    @subject     = 'Your account has been activated!'
     @body[:url]  = "#{Conf.site_url}"
   end
 
   def forgot_password(user)
     setup_email(user)
-    @subject    += 'You have requested to change your password'
+    @subject     = 'You have requested to change your password'
     @body[:url]  = "#{Conf.site_url}reset_password/#{user.password_reset_code}"
   end
 
   def reset_password(user)
     setup_email(user)
-    @subject    += 'Your password has been reset.'
+    @subject     = 'Your password has been reset.'
   end
 
   def message_to_admin(subject,body)
@@ -30,7 +30,7 @@ class UserMailer < ActionMailer::Base
     @from        = @admin.email
     @subject     = "#{Conf.site_name}"
     @sent_on     = Time.now
-    @subject    += subject
+    @subject     = subject
     @body[:body]  = body
   end
   

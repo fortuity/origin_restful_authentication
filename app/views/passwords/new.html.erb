@@ -1,9 +1,35 @@
-<h2>Forgot Password</h2>
-<% form_tag url_for(:action => 'create') do %>
-What is the email address used to create your account?<br />
-<%= text_field_tag :email, "", :size => 50 %><br />
-<%= submit_tag 'Reset Password' %>
-<% end %>
-<script type='text/javascript'>
-document.getElementById('email').focus()
-</script>
+<h3>Forgot Your Password?</h3>
+
+<% form_tag(url_for(:action => :create), {:class => 'MainForm'}) do -%>
+
+	<%= label_tag 'email', "Enter your email address" %>
+	<%= text_field_tag :email %>
+
+	<p><%= submit_tag 'Reset my password' %></p>
+<% end -%>
+
+
+<% content_for(:sidebar) do %>
+	<div class="box">
+		<h3>Help</h3>
+		<p>
+		Don't have an account?
+		<br/>
+		<%= link_to '» Click here to sign up', new_user_path %>
+		</p>
+	</div>
+	<div class="box alt">
+		<h3>Tips</h3>
+		<p> If you've forgotten your password, 
+			we'll send you an email that contains an activation link. </p>
+		<p> Click the activation link in the e-mail to 
+			confirm your address and go to a page where you
+			can create a new password. </p>
+	</div>
+<% end -%>
+
+<% content_for(:head) do %>
+	<script type='text/javascript'>
+	  document.getElementById('email').focus()
+	</script>
+<% end -%>
