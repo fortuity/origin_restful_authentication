@@ -82,9 +82,9 @@ end
 
 def named_user login
   user_params = {
-    'admin'   => {'id' => 1, 'login' => 'addie', 'password' => '1234addie', 'email' => 'admin@example.com',       },
-    'oona'    => {          'login' => 'oona',   'password' => '1234oona',  'email' => 'unactivated@example.com'},
-    'reggie'  => {          'login' => 'reggie', 'password' => 'monkey',    'email' => 'registered@example.com' },
+    'admin'   => {'id' => 1, 'login' => 'addie', 'password' => '1234addie', 'email' => 'admin@rspectest.com',       },
+    'oona'    => {          'login' => 'oona',   'password' => '1234oona',  'email' => 'unactivated@rspectest.com'},
+    'reggie'  => {          'login' => 'reggie', 'password' => 'monkey',    'email' => 'registered@rspectest.com' },
     }
   user_params[login.downcase]
 end

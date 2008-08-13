@@ -2,7 +2,7 @@
 quentin:
   id:                        1
   login:                     quentin
-  email:                     quentin@example.com
+  email:                     quentin@rspectest.com
   salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
   crypted_password:          c8a7e6d881a91d31bf1ef72ff77565aadfc3c370 # 'monkey'
   created_at:                <%= 5.days.ago.to_s :db  %>
@@ -15,7 +15,7 @@ quentin:
 aaron:
   id:                        2
   login:                     aaron
-  email:                     aaron@example.com
+  email:                     aaron@rspectest.com
   salt:                      da4b9237bacccdf19c0760cab7aec4a8359010b0 # SHA1('1')
   crypted_password:          d78f8c5fae9463d904a5f0aea94f456ad74655c4 # 'monkey'
   created_at:                <%= 1.days.ago.to_s :db %>
@@ -30,7 +30,7 @@ aaron:
 old_password_holder:
   id:                        3
   login:                     old_password_holder
-  email:                     salty_dog@example.com
+  email:                     salty_dog@rspectest.com
   salt:                      7e3041ebc2fc05a40c60028e2c4901a81035d3cd
   crypted_password:          00742970dc9e6319f8019fd54864d3ea740f04b1 # test
   created_at:                <%= 1.days.ago.to_s :db %>

@@ -21,6 +21,7 @@ The application provides _authentication_ (the user must enter a name and passwo
 * user status managed with the "acts as state machine" (AASM) plugin
 * Email messages can be sent using a Google gmail account
 * Application global configuration file
+* RSpec stories and examples
 
 The application does not provide support for the OpenID protocol. The forum discussion [Restful Authentication With All the Bells and Whistles](http://www.railsforum.com/viewtopic.php?id=14216) provides instructions for adding OpenID support if you require it.
 
@@ -121,7 +122,7 @@ You must prepare the test database before running RSpec:
 	
 which takes a schema dump from the development database and uses it to create a test database. (If you're modifying the app, you'll need to do that after every migration.)
 
-Before running RSpec stories or examples, you should change email addresses throughout the RSpec code (or else you may get "mail undelivered" bounce messages). Search and replace for "example.com."
+When you run RSpec stories or examples, you may get "mail undelivered" bounce messages unless you change email addresses throughout the RSpec code. Search and replace for "rspectest.com."
 
 To see the RSpec stories:
 
@@ -135,7 +136,7 @@ To run the RSpec examples:
 
 * Fix this: Some flash messages persist between pages
 * Fix this: After successful log in, user sees the login page
-* Add RSpec examples and stories to cover "Bells and Whistles" features
+* Add RSpec examples and stories to cover more "Bells and Whistles" features
 * Change "login" to use email addresses instead
 
 ## Done
