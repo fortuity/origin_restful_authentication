@@ -17,6 +17,6 @@ ActionMailer::Base.smtp_settings = {
   :port => 587,
   :domain => "localhost",
   :authentication => :plain,
-  :user_name => "GOOGLE_ACCOUNT_LOGIN",
-  :password => "GOOGLE_ACCOUNT_PASSWORD"  
+  :user_name => GOOGLE_ACCOUNT_LOGIN,
+  :password => GOOGLE_ACCOUNT_PASSWORD
 }

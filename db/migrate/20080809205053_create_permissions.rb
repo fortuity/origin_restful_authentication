@@ -13,13 +13,13 @@ class CreatePermissions < ActiveRecord::Migration
     # Add the default admin user
     # Be sure to change the password
     user = User.new({
-      :login => "#{Conf.admin_login}",
-      :email => "#{Conf.admin_email_address}",
-      :password => "#{Conf.admin_password}",
-      :password_confirmation => "#{Conf.admin_password}"
+      :login => ADMIN_LOGIN,
+      :email => ADMIN_EMAIL_ADDRESS,
+      :password => ADMIN_PASSWORD,
+      :password_confirmation => ADMIN_PASSWORD
     })
     user.save(false)
-    user = User.find_by_login(Conf.admin_login)
+    user = User.find_by_login(ADMIN_LOGIN)
     user.send(:activate!)
 
     role = Role.find_by_name('administrator')
@@ -33,6 +33,6 @@ class CreatePermissions < ActiveRecord::Migration
   def self.down
     drop_table :permissions
     Role.find_by_name('administrator').destroy
-    User.find_by_login(Conf.admin_login).destroy
+    User.find_by_login(ADMIN_LOGIN).destroy
   end
 end

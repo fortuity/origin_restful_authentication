@@ -1,3 +1,7 @@
+# Set site-specific values in this file.
+# This file is used by the app_config plugin.
+# Plugins are loaded before initializers, so values set here become global constants
+# when the Rails start-up process loads from "config/initializers/app_constants.rb."
 # Values set in this file are called in the application like this: Conf.site_url.
 # Values set in the "common" section are shared among development, test, and production
 # environments unless overridden in development, test, or production sections.
@@ -5,12 +9,14 @@
 # See vendor/plugins/app_config/README for more information.
 
 common:
-  site_url: http://mydomain.com/
+  site_url: http://www.mydomain.com/
   site_email_address: admin@mydomain.com
   site_name: Origin RESTful Authentication
   admin_login: admin
-  admin_email_address: admin@mydomain.com
   admin_password: admin
+  admin_email_address: admin@mydomain.com
+  google_account_login: unknown
+  google_account_password: secret
 
 development:
   site_url: http://localhost:3000/

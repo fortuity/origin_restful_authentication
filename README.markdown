@@ -47,12 +47,15 @@ You can download the app ("clone the repository") with the command
 
 ## Configure Email
 
-The application has been configured to use a Google gmail account to send confirmation emails to new users. Using a Google gmail account means you can host the application with a hosting provider who does not provide email services. Alternatively, if you have an email server for your domain, you can use your own email server if you wish.
+The application has been configured to use a Google gmail account to send confirmation emails to new users. Using a Google gmail account means you can host the application with a hosting provider who does not provide email services.
 
 Configure email by modifying
 
-	config/initializers/mail.rb
 	config/config.yml (or create "config/config.local.yml")
+	
+Alternatively, if you have an email server for your domain, you can use your own email server by modifying
+
+	config/initializers/mail.rb
 		
 ## Set Up the Database
 
@@ -159,9 +162,9 @@ To run the RSpec examples:
 	* Created required migrations
 	* Modified models "Role", "Permission", and "User"
 	* Modified UserMailer and UserObserver
-	* Added Google gmail support with lib/smtp_ tls.rb
+	* Added Google gmail support with lib/smtp\_tls.rb
 	* Modified config/initializers/mail.rb
-	* Modified lib/authenticated_ system.rb
+	* Modified lib/authenticated\_system.rb
 	* Modified controllers
 	* Added views
 * Tagged step-3
@@ -169,6 +172,7 @@ To run the RSpec examples:
 * Added Blueprint CSS framework
 * Modified views and added CSS to apply design elements
 * Tagged step-4
+* Set up global constants in config/initializers/app\_constants_.rb
 
 ## Documentation and Support
 

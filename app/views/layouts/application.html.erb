@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
- <title><%= Conf.site_name -%>:
+ <title><%= SITE_NAME -%>:
   <%= controller.controller_name -%>:
   <%= controller.action_name -%>
  </title>
@@ -18,7 +18,7 @@
 		<div id='container_hd'>
 		  <div id='hd'>
 		    <h1>
-				<a href="/"><%= Conf.site_name -%></a>
+				<a href="/"><%= SITE_NAME -%></a>
 			</h1>
 		    <h2>
 		    	<% if logged_in? %>
