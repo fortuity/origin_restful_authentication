@@ -5,7 +5,7 @@ Use this example Rails application as a basis for a typical web application.
 It provides a complete system for managing users, using RESTful authentication, as 
 described in the forum discussion [Restful Authentication With All the Bells and Whistles](http://www.railsforum.com/viewtopic.php?id=14216).
 
-The application provides _authentication_ (the user must enter a name and password to use the application) and _authorization_ (access to some pages is limited to users with an "administrator" role). To use the application, a visitor must _sign_ _up_ and click an _activation_ _link_ in an email message. If the user forgets his or her password, there is a _forgot_ _password_ option that emails a reset password link.
+The application provides _authentication_ (the user must enter a name and password to use the application) and _authorization_ (access to some pages is limited to users with an "administrator" role). To use the application, a visitor must sign up and click an activation link in an email message. If the user forgets his or her password, there is a forgot password option that emails a reset password link.
 
 ### Features from "Restful Authentication With All the Bells and Whistles"
 
@@ -30,11 +30,11 @@ The application does not provide support for the OpenID protocol. The forum disc
 
 ## Rails Plugins Used
 
-* restful_authentication
-* acts as state machine
+* restful\_authentication
+* acts\_as\_state\_machine
 * rspec
 * rspec-rails
-* app_config
+* app\_config
 
 ## Get It
 
@@ -67,6 +67,12 @@ If you're using MySQL, you'll need to edit the file
 
 	config/database.yml
 
+Running the database migrations sets up a user named "admin" with a password "admin" and a role of "administrator". You can modify the file
+
+	config/config.yml
+
+if you wish to change the administrator name and password before you run the migration.
+	
 Set up the database by running
 
 	$ rake db:create:all
@@ -77,12 +83,6 @@ If you get an error
 	SQLite3::SQLException: no such table
 	
 it means you didn't run the database migration.
-
-Running the database migrations sets up a user named "admin" with a password "admin" and a role of "administrator". You can modify the file
-
-	config/config.yml
-
-if you wish to change the administrator name and password before you run the migration.
 	
 ## Getting Started
 
@@ -103,7 +103,11 @@ You should change the admin user name and password after you log in.
 
 Before you deploy to production, be sure to replace http://localhost:3000/ with your site URL in the file:
 
-	config/config.yml	
+	config/config.yml
+	
+For full security, change the REST\_AUTH\_SITE\_KEY in 
+
+	config/initializers/site_keys.rb
 
 ## Running RSpec
 

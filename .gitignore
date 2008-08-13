@@ -5,7 +5,6 @@
 config/database.yml
 config/config.local.yml
 config/locomotive.yml
-config/initializers/site_keys.rb
 db/*.sqlite3*
 db/schema.rb
 db/schema.sql
