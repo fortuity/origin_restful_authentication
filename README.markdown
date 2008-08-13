@@ -133,6 +133,8 @@ To run the RSpec examples:
 	
 ## To Do
 
+* Fix this: Some flash messages persist between pages
+* Fix this: After successful log in, user sees the login page
 * Add RSpec examples and stories to cover "Bells and Whistles" features
 * Change "login" to use email addresses instead
 
