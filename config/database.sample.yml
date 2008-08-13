@@ -37,7 +37,7 @@ production:
 # development:
 #   adapter: mysql
 #   encoding: utf8
-#   database: bellsandwhistles_development
+#   database: origin_development
 #   username: root
 #   password:
 #   host: localhost
@@ -48,7 +48,7 @@ production:
 # test:
 #   adapter: mysql
 #   encoding: utf8
-#   database: bellsandwhistles_test
+#   database: origin_test
 #   username: root
 #   password:
 #  host: localhost
