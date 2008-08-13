@@ -105,7 +105,7 @@ You should change the admin user name and password after you log in.
 
 ## Deploy
 
-Before you deploy to production, be sure to replace http://localhost:3000/ with your site URL in the file:
+Before you deploy to production, be sure to replace example values such as http://www.mydomain.com/ with your site information in the file:
 
 	config/config.yml
 	
