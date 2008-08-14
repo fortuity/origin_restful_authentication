@@ -1,0 +1,48 @@
+<h3>Welcome</h3>
+
+<p>This is an open source Rails example application.</p>
+
+<p>It provides a complete system for managing users, including sign up and verification of a new user's email address, login with role-based access control, and a system of resetting forgotten passwords, all using a RESTful architecture.</p>
+
+<p>You can easily customize the application for your own needs.</p>
+
+<p>You can obtain the source code here:</p>
+<ul>
+	<li><%= link_to 'http://github.com/fortuity/origin_restful_authentication/tree/master', "http://github.com/fortuity/origin_restful_authentication/tree/master" %></li>
+</ul>
+
+<p>You can write a review or offer comments here:</p>
+<ul>
+	<li><%= link_to 'Open Source Rails Gallery', "http://www.opensourcerails.com/" %></li>
+</ul>
+
+<p>You can see the original announcement:</p>
+<ul>
+	<li><%= link_to 'Rails RESTful Authentication Example Application', "http://originblog.wordpress.com/" %></li>
+</ul>
+
+<p>and keep up with recent developments on the blog:</p>
+<ul>
+	<li><%= link_to 'Origin: Rails Example Applications', "http://originblog.wordpress.com/" %></li>
+</ul>
+
+<% content_for(:sidebar) do %>
+	<div class="box">
+		<h3>Help</h3>
+		<p>
+		Ready to log in?
+		<br/>
+		<%= link_to '» Click here to log in', new_session_path %>
+		</p>
+		<p>
+		Don't have an account?
+		<br/>
+		<%= link_to '» Click here to sign up', new_user_path %>
+		</p>
+		<p>
+		Forgot your password?
+		<br/>
+		<%= link_to '» Click here to retrieve it', forgot_password_path %>
+		</p>
+	</div>
+<% end -%>

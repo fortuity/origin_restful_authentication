@@ -2,7 +2,7 @@
 
 Use this example Rails application as a basis for a typical web application.
 
-It provides a complete system for managing users, using RESTful authentication, as 
+It provides a complete system for managing users, including sign up and verification of a new user's email address, login with role-based access control, and a system of resetting forgotten passwords, all using a RESTful architecture, as 
 described in the forum discussion [Restful Authentication With All the Bells and Whistles](http://www.railsforum.com/viewtopic.php?id=14216).
 
 The application provides _authentication_ (the user must enter a name and password to use the application) and _authorization_ (access to some pages is limited to users with an "administrator" role). To use the application, a visitor must sign up and click an activation link in an email message. If the user forgets his or her password, there is a forgot password option that emails a reset password link.
@@ -137,8 +137,6 @@ To run the RSpec examples:
 	
 ## To Do
 
-* Fix this: Some flash messages persist between pages
-* Fix this: After successful log in, user sees the login page
 * Add RSpec examples and stories to cover more "Bells and Whistles" features
 * Change "login" to use email addresses instead
 
@@ -173,6 +171,7 @@ To run the RSpec examples:
 * Modified views and added CSS to apply design elements
 * Tagged step-4
 * Set up global constants in config/initializers/app\_constants_.rb
+* Added a welcome page
 
 ## Documentation and Support
 

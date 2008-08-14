@@ -16,8 +16,8 @@ ActionController::Routing::Routes.draw do |map|
     user.resources :roles
   end
 
-  # needed to run RSpec stories as installed by the the restful_authentication plugin
-  map.root :controller => 'sessions', :action => 'new'
+  # "root" route needed to run RSpec stories for the the restful_authentication plugin
+  map.root :controller => 'welcome',  :action => 'index'
 
   # Default routes removed for safety
   # map.connect ':controller/:action/:id'
