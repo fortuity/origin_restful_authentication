@@ -91,10 +91,10 @@ describe User do
   end
 
   describe 'allows legitimate emails:' do
-    ['foo@bar.com', 'foo@newskool-tld.museum', 'foo@twoletter-tld.de', 'foo@nonexistant-tld.qq',
-     'r@a.wk', '1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com',
-     'hello.-_there@funnychar.com', 'uucp%addr@gmail.com', 'hello+routing-str@gmail.com',
-     'domain@can.haz.many.sub.doma.in', 'student.name@university.edu'
+    ['foo@bar.com', 'foo@newskool-tld.museum', 'foo@twoletter-tld.de', 'foo@nonexistent-tld.qq',
+     'r@a.wk', '1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-23456@rspectest.com',
+     'hello.-_there@rspectest.com', 'uucp%addr@gmail.com', 'hello+routing-str@rspectest.com',
+     'domain@can.haz.many.sub.doma.in', 'student.name@rspectest.edu'
     ].each do |email_str|
       it "'#{email_str}'" do
         lambda do

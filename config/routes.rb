@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resource :password
-  map.resource :session
+
   map.logout          '/logout',              :controller => 'sessions', :action => 'destroy'
   map.login           '/login',               :controller => 'sessions', :action => 'new'
   map.register        '/register',            :controller => 'users', :action => 'create'
@@ -15,6 +15,9 @@ ActionController::Routing::Routes.draw do |map|
                                      :purge     => :delete } do |user|
     user.resources :roles
   end
+
+  # '/logout' and '/login' should take precedence for RSpec to run without errors
+  map.resource :session
 
   # "root" route needed to run RSpec stories for the the restful_authentication plugin
   map.root :controller => 'welcome',  :action => 'index'
