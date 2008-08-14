@@ -139,7 +139,12 @@ You must prepare the test database before running RSpec:
 	
 which takes a schema dump from the development database and uses it to create a test database. (If you're modifying the app, you'll need to do that after every migration.)
 
-When you run RSpec stories or examples, you may get "mail undelivered" bounce messages unless you change email addresses throughout the RSpec code. Search and replace for "rspectest.com."
+Be sure that you've prepared the app to send email:
+
+* set your gmail login and password in config/config.yml
+* or modify config/initializers/mail.rb
+	
+or you will get many failures when you run RSpec.
 
 To see the RSpec stories:
 
@@ -148,6 +153,8 @@ To see the RSpec stories:
 To run the RSpec examples:
 
 	$ rake spec
+
+When you run RSpec stories or examples, real email messages are sent. You may get "mail undelivered" bounce messages unless you change email addresses throughout the RSpec code. Search and replace for "rspectest.com" if the bounce messages irritate you.
 	
 ## To Do
 
