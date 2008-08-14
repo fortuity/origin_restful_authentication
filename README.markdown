@@ -25,6 +25,16 @@ The application provides _authentication_ (the user must enter a name and passwo
 
 The application does not provide support for the OpenID protocol. The forum discussion [Restful Authentication With All the Bells and Whistles](http://www.railsforum.com/viewtopic.php?id=14216) provides instructions for adding OpenID support if you require it.
 
+## More Information
+
+You can see the original announcement:
+
+* [Rails RESTful Authentication Example Application](http://originblog.wordpress.com/2008/08/13/rails-restful-authentication-example-application/)
+
+and keep up with developments on the blog:
+
+* [Origin: Rails Example Applications](http://originblog.wordpress.com/)
+
 ## Dependencies
 
 * Runs under Rails 2.1
