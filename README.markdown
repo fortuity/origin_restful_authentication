@@ -35,10 +35,6 @@ and keep up with developments on the blog:
 
 * [Origin: Rails Example Applications](http://originblog.wordpress.com/)
 
-You can write a review or offer comments:
-
-* [Open Source Rails Gallery](http://www.opensourcerails.com/projects/981-Origin-RESTful-Authentication)
-
 ## Dependencies
 
 * Runs under Rails 2.1
