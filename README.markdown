@@ -27,6 +27,10 @@ The application does not provide support for the OpenID protocol. The forum disc
 
 ## More Information
 
+You can ask questions, make suggestions, and report problems:
+
+* [Get Satisfaction for the RESTful Authentication Example Application](http://getsatisfaction.com/origin/products/origin_restful_authentication_example_application)
+
 You can see the original announcement:
 
 * [Rails RESTful Authentication Example Application](http://originblog.wordpress.com/2008/08/13/rails-restful-authentication-example-application/)
@@ -193,6 +197,10 @@ When you run RSpec stories or examples, real email messages are sent. You may ge
 ## Documentation and Support
 
 The forum discussion [Restful Authentication With All the Bells and Whistles](http://www.railsforum.com/viewtopic.php?id=14216) provides detailed information about the code. You can seek clarification or help there.
+
+Here's another place to ask questions, make suggestions, and report problems:
+
+* [Get Satisfaction for the RESTful Authentication Example Application](http://getsatisfaction.com/origin/products/origin_restful_authentication_example_application)
 
 Here are useful blog postings:
 
