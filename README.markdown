@@ -1,13 +1,21 @@
-# origin restful authentication
+# Rails 2.1 Restful Authentication
 
-Use this example Rails application as a basis for a typical web application.
+### Deprecated
+
+Rails has advanced since this application was developed. As of February 2010, Rails is currently at version 2.3.5 (and Rails 3 is in beta). Several Rails gems are now available that provide a turnkey authentication solution, including [Authlogic](http://github.com/binarylogic/authlogic), [Devise](http://github.com/plataformatec/devise), [Clearance](http://github.com/thoughtbot/clearance), and Technoweenie's [restful-authentication gem](http://github.com/technoweenie/restful-authentication). See the Ruby Toolbox page for [Rails Authentication](http://www.ruby-toolbox.com/categories/rails_authentication.html) to see which is most popular. You will better served by looking at examples that use one of the authentication gems than by using this example application.
+
+I personally recommend [Devise](http://github.com/plataformatec/devise) and the [Devise Example Application](http://github.com/plataformatec/devise_example).
+
+### Description
+
+This is an example application for Rails 2.1 that implements best practices (circa 2008) for authentication and user management.
 
 It provides a complete system for managing users, including sign up and verification of a new user's email address, login with role-based access control, and a system of resetting forgotten passwords, all using a RESTful architecture, as 
 described in the forum discussion [Restful Authentication With All the Bells and Whistles](http://www.railsforum.com/viewtopic.php?id=14216).
 
 The application provides _authentication_ (the user must enter a name and password to use the application) and _authorization_ (access to some pages is limited to users with an "administrator" role). To use the application, a visitor must sign up and click an activation link in an email message. If the user forgets his or her password, there is a forgot password option that emails a reset password link.
 
-### Features from "Restful Authentication With All the Bells and Whistles"
+#### Features from "Restful Authentication With All the Bells and Whistles"
 
 * visitors register ("sign up") to create a user account
 * new users are emailed a link to verify their email address and activate their account
@@ -16,7 +24,7 @@ The application provides _authentication_ (the user must enter a name and passwo
 * some users can be assigned an administrator role to edit or delete other users
 * user management and authentication is implemented with a RESTful architecture
 
-### Added Features
+#### Added Features
 
 * user status managed with the "acts as state machine" (AASM) plugin
 * Email messages can be sent using a Google gmail account
